@@ -59,7 +59,7 @@ while True:
                else:
                    resultado = resultado - atual
                    
-           print("O Número correspondente é: ", resultado)
+           print("Resultado: %s =" % AlgaUP, resultado)
            
        elif acao == 0:
            break
