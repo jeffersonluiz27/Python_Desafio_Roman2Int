@@ -33,38 +33,41 @@ Numeros_dic = {
 
 
 while True:
-    proxima=0
-    x=0
-    resultado = 0
-    print("\nConverta Algarismos Romanos em Numeros Inteiros!!")
-    acao = int(input("Para ENTRAR escolha 1 | Para SAIR escolha 0\n"))
-    if acao == 1:
-        Algrom = input("Entre com os algarismos: ")
-        AlgaUP = Algrom.upper()
-        ultimo = len(AlgaUP)
+    try:
+       proxima=0
+       x=0
+       resultado = 0
+       print("\n")
+       acao = int(input("Converta Algarismos Romanos em Numeros Inteiros!!"
+                        "\nPara ENTRAR escolha 1 | Para SAIR escolha 0\n")) 
+       if acao == 1:
+           Algrom = input("Entre com os algarismos: ")
+           AlgaUP = Algrom.upper()
+           ultimo = len(AlgaUP)
         
-        for i in AlgaUP:
-           atual = Numeros_dic[i]
-           indice = x+1
+           for i in AlgaUP:
+               atual = Numeros_dic[i]
+               indice = x+1
            
-           if indice < ultimo:
-               proxima = Numeros_dic[AlgaUP[indice]]
-               x=x+1
-           else:
-               proxima = 0
-               
-           if atual >= proxima:
-               resultado = resultado + atual
-           else:
-               resultado = resultado - atual
-               
-                
-        print("O Número correspondente é: ", resultado)
-    elif acao == 0:
-        break
-    else:
-        
-        print("\n\n\nOpção Invalida!\n\n\n");
+               if indice < ultimo:
+                   proxima = Numeros_dic[AlgaUP[indice]]
+                   x=x+1
+               else:
+                   proxima = 0
+               if atual >= proxima:
+                   resultado = resultado + atual
+               else:
+                   resultado = resultado - atual
+                   
+           print("O Número correspondente é: ", resultado)
+           
+       elif acao == 0:
+           break
+       else:
+           print("\n\n\nOpção Invalida!\n\n\n")
+    except:
+       print("\n\n\nEntrada Invalida!\n\n\n") 
+            
 
 
     
